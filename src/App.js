@@ -1,5 +1,6 @@
 import "./App.css";
-import { Component } from "react/cjs/react.development";
+import { Component } from "react";
+import PropTypes from "prop-types";
 import Section from "./components/Section/Section";
 import FeedbackOptions from "./components/FeedbackOptions/FeedbackOptions";
 import Notification from "./components/Notification/Notification";
@@ -13,7 +14,6 @@ class App extends Component {
   };
   addToFeedback = (event) => {
     const option = event.target.textContent;
-    console.log(option);
     this.setState((prevState) => ({
       [option]: prevState[option] + 1,
     }));
@@ -51,4 +51,7 @@ class App extends Component {
   };
 }
 
+App.propType = {
+  state: PropTypes.objectOf(PropTypes.number).isRequired,
+};
 export default App;

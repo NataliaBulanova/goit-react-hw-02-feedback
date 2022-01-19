@@ -1,25 +1,18 @@
+import PropTypes from "prop-types";
+import { List } from "./Statistics.styled";
+
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
-    <ul>
+    <List>
       <li>Good: {good}</li>
       <li>Neutral: {neutral}</li>
       <li>Bad: {bad}</li>
       <li>Total: {total}</li>
       <li>Positive feedback: {positivePercentage}%</li>
-    </ul>
+    </List>
   );
 };
 
-// () => {
-// };
-
-/* <h2>Statistics</h2>
-<ul>
-  <li>good:{this.state.good}</li>
-  <li>neutral:{this.state.neutral}</li>
-  <li>bad:{this.state.bad}</li>
-  <li>Total:{total}</li>
-  <li>Positive feedback:{positivePercentage}%</li>
-</ul> */
+Statistics.propType = PropTypes.objectOf(PropTypes.number).isRequired;
 
 export default Statistics;
