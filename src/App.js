@@ -18,6 +18,15 @@ class App extends Component {
       [option]: prevState[option] + 1,
     }));
   };
+
+  propType = {
+    state: PropTypes.shape({
+      good: PropTypes.number.isRequired,
+      neutral: PropTypes.number.isRequired,
+      bad: PropTypes.number.isRequired,
+    }).isRequired,
+  };
+
   render() {
     return (
       <div className="App">
@@ -51,11 +60,4 @@ class App extends Component {
   };
 }
 
-App.propType = {
-  state: PropTypes.shape({
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-  }).isRequired,
-};
 export default App;
