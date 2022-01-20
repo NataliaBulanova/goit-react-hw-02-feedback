@@ -52,6 +52,10 @@ class App extends Component {
 }
 
 App.propType = {
-  state: PropTypes.objectOf(PropTypes.number).isRequired,
+  state: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }).isRequired,
 };
 export default App;
